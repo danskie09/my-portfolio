@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daniel Banaybanay | Portfolio</title>
+    <!-- minify -->
+    <link
+      href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css"
+      rel="stylesheet"
+    />
+    <!-- latest -->
+    <link
+      href="https://unpkg.com/nes.css@latest/css/nes.min.css"
+      rel="stylesheet"
+    />
+    <!-- core style only -->
+    <link
+      href="https://unpkg.com/nes.css/css/nes-core.min.css"
+      rel="stylesheet"
+    />
+    <!-- Press Start 2P  -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+      rel="stylesheet"
+    />
+
+    <!-- css style -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="welcome">
+      <h1>Daniel Banaybanay</h1>
+      <p>Front End Developer / Retro Design Enthusiast</p>
+      <button type="button" class="welcomeBtn">PRESS START TO ENTER</button>
+    </div>
+
+    <script src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.birds.min.js"></script>
+    <script>
+  VANTA.BIRDS({
+    el: "body", /* Apply the animation to the entire body */
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.00,
+    scaleMobile: 1.00,
+    backgroundColor: 0xffffff, /* White background */
+    color1: 0x000000, /* Black birds */
+    color2: 0x000000, /* Black birds */
+    birdSize: 0.50
+  });
+</script>
+  </body>
+</html>
