@@ -1,27 +1,30 @@
-
 :root {
   --primary-color: #0F0F0F;
   --secondary-color: whitesmoke;
-  --outline-color: white;
+  --text-color: white;
 }
 
 
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%; /* Ensure the body takes up the full height */
-  width: 100%; /* Ensure the body takes up the full width */
-  overflow: hidden; /* Prevent scrolling */
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 100%), 
+                    url('./images/background.webp'); /* Replace with your image file */
+  background-size: 100%; /* Ensures the image covers the entire body */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  font-family: 'Press Start 2P', sans-serif; /* Retro font */
+  color: whitesmoke; /* White text color */
+  overflow: hidden;
 }
-
-
 
 * {
   margin: 0;
   box-sizing: border-box;
   padding: 0;
 }
-
 
 .welcome {
   width: 700px;
@@ -31,18 +34,4 @@ html, body {
   align-content: center;
 }
 
-.welcomeBtn {
-  width: 300px;
-  font-size: 12px;
-  color: var(--secondary-color);
-  background-color: var(--primary-color);
-  padding: 12px;
-  margin: 10px;
-  border: 1px solid;
-  border-radius: 30px;
-}
 
-.welcomeBtn:active {
-  
-  transform: translateY(4px);
-}
