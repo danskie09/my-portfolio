@@ -31,12 +31,22 @@ html, body {
 
 /* Navbar styling - Codedx inspired */
 nav {
-  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-family: 'Press Start 2P', monospace;
 }
 
 nav .text-lg, nav .text-xl {
   font-family: 'Press Start 2P', monospace;
   font-size: 1rem;
+}
+
+/* Navigation links with Press Start 2P font */
+nav a {
+  font-family: 'Press Start 2P', monospace !important;
+}
+
+/* Button styling with Press Start 2P font */
+nav button {
+  font-family: 'Press Start 2P', monospace !important;
 }
 
 /* Smooth scrolling for anchor links */
