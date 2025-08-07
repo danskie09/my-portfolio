@@ -4,20 +4,21 @@
   --text-color: white;
 }
 
-
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 100%), 
-                    url('./images/background.webp'); /* Replace with your image file */
-  background-size: 100%; /* Ensures the image covers the entire body */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-  font-family: 'Press Start 2P', sans-serif; /* Retro font */
-  color: whitesmoke; /* White text color */
-  overflow: hidden;
+  background-image: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.8) 100%), 
+    url('./images/8-bit-graphics-pixels-scene-with-island.jpg');
+  background-size: cover; /* Changed from 100% to cover for better responsiveness */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Keeps background fixed on scroll */
+  font-family: 'Press Start 2P', sans-serif;
+  color: whitesmoke;
+  overflow-x: hidden; /* Allow vertical scroll but prevent horizontal */
 }
 
 * {
@@ -26,12 +27,162 @@ html, body {
   padding: 0;
 }
 
-.welcome {
-  width: 700px;
-  height: 100vh;
-  margin: 55px auto;
-  text-align: center;
-  align-content: center;
+
+
+h1 {
+  font-weight: bolder;
+  line-height: 1.2; /* Better line spacing for mobile */
+  word-break: break-word; /* Prevents overflow on small screens */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 
+               -1px -1px 2px rgba(0, 0, 0, 0.6),
+               1px -1px 2px rgba(0, 0, 0, 0.6),
+               -1px 1px 2px rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+}
+
+/* Floating animation for the name */
+.floating-text {
+  color: #fbbf24 !important; /* Yellow color */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9), 
+               0 0 20px rgba(251, 191, 36, 0.4),
+               0 0 40px rgba(251, 191, 36, 0.2) !important;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Beautiful fade-in animation */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 0.8;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1.5s ease-out;
+}
+
+/* Enhanced button hover effects */
+button:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 10px 25px rgba(251, 191, 36, 0.3) !important;
+}
+
+/* Subtle glow for decorative elements */
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Enhanced text styling */
+p {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Pixelated title styling like Codedx */
+.pixel-title {
+  font-family: 'Press Start 2P', monospace;
+  font-weight: normal;
+  text-shadow: 
+    4px 4px 0px rgba(0, 0, 0, 0.8),
+    6px 6px 0px rgba(0, 0, 0, 0.6),
+    8px 8px 0px rgba(0, 0, 0, 0.4),
+    0px 0px 20px rgba(251, 191, 36, 0.3);
+  letter-spacing: 2px;
+  animation: subtle-glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes subtle-glow {
+  0% {
+    text-shadow: 
+      4px 4px 0px rgba(0, 0, 0, 0.8),
+      6px 6px 0px rgba(0, 0, 0, 0.6),
+      8px 8px 0px rgba(0, 0, 0, 0.4),
+      0px 0px 20px rgba(251, 191, 36, 0.3);
+  }
+  100% {
+    text-shadow: 
+      4px 4px 0px rgba(0, 0, 0, 0.8),
+      6px 6px 0px rgba(0, 0, 0, 0.6),
+      8px 8px 0px rgba(0, 0, 0, 0.4),
+      0px 0px 30px rgba(251, 191, 36, 0.5),
+      0px 0px 40px rgba(251, 191, 36, 0.3);
+  }
+}
+
+/* Button styling to match Codedx */
+button {
+  font-family: 'Press Start 2P', monospace;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Add styling for better readability of other text elements */
+.welcome p {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+}
+
+/* Make button more visible too */
+.welcome button {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 640px) {
+  html, body {
+    background-size: cover;
+    background-position: center top;
+  }
+  
+  .welcome {
+    padding: 2rem 1rem;
+    min-height: 100vh;
+  }
+  
+  .welcome h1 {
+    font-size: 1.5rem; /* Smaller on mobile */
+    margin-bottom: 1rem;
+  }
+}
+
+/* Tablet responsiveness */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .welcome {
+    padding: 2rem;
+    max-width: 600px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1025px) {
+  .welcome {
+    max-width: 700px;
+    padding: 2rem;
+  }
 }
 
 

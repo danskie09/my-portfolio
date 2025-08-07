@@ -1,0 +1,97 @@
+:root {
+  --primary-color: #0F0F0F;
+  --secondary-color: whitesmoke;
+  --text-color: white;
+  --retro-green: #00ff00;
+  --retro-amber: #ffbf00;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-image: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.8) 100%), 
+    url('./images/8-bit-graphics-pixels-scene-with-island.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Press Start 2P', sans-serif;
+  color: whitesmoke;
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* Navbar styling - Codedx inspired */
+nav {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+nav .text-lg, nav .text-xl {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 1rem;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Override some NES.css for cleaner look */
+.nes-container {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+/* Main content styling */
+main .nes-container {
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid var(--retro-amber);
+  box-shadow: 0 0 20px rgba(255, 191, 0, 0.3);
+}
+
+main .title {
+  color: var(--retro-amber) !important;
+  text-shadow: 0 0 10px var(--retro-amber);
+}
+
+/* Text effects */
+p {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  nav .title {
+    font-size: 1rem;
+  }
+  
+  nav .nes-btn {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  main .nes-container {
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  nav .flex {
+    gap: 0.25rem;
+  }
+  
+  nav .nes-btn {
+    font-size: 0.65rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
