@@ -461,6 +461,121 @@
       </div>
     </section>
 
+    <!-- About Section -->
+    <section
+      id="about"
+      class="min-h-screen py-20 px-4 sm:px-6 lg:px-8 relative z-10"
+    >
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="nes-text is-warning text-2xl sm:text-3xl mb-4">
+            ABOUT ME
+          </h2>
+          <p class="text-gray-300 max-w-2xl mx-auto">
+            Get to know the developer behind the code - my journey, passion for AI-enhanced development, and vision for intelligent systems.
+          </p>
+        </div>
+
+        <!-- Compact About Card -->
+        <div class="nes-container is-dark relative overflow-hidden py-4">
+          <!-- Village Background Image -->
+          <div class="absolute inset-0 opacity-60">
+            <img
+              src="./images/8-bit-graphics-pixels-scene-with-village.jpg"
+              alt="Village Background"
+              class="w-full h-full object-cover"
+              style="image-rendering: pixelated"
+            />
+            <div class="absolute inset-0 bg-gradient-to-br from-black/30 via-black/20 to-black/30"></div>
+          </div>
+          
+          <div class="relative z-10">
+            <!-- Two Column Grid Layout - Compact -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              
+              <!-- Left Column - About Info -->
+              <div>
+                <!-- Header Section -->
+                <div class="flex items-center mb-4">
+                  <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center border border-purple-400/30 mr-3">
+                    <span class="text-2xl">👨‍💻</span>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-bold text-white">Daniel Banaybanay</h3>
+                    <p class="text-purple-400 text-xs">IT Graduate | Full Stack Developer</p>
+                  </div>
+                </div>
+
+                <!-- Quick Info -->
+                <div class="space-y-2 mb-4">
+                  <div class="flex items-center">
+                    <span class="text-blue-400 mr-2">📍</span>
+                    <span class="text-gray-300 text-xs">Negros Oriental, Philippines</span>
+                  </div>
+                  <div class="flex items-center">
+                    <span class="text-purple-400 mr-2">🎓</span>
+                    <span class="text-gray-300 text-xs">NORSU Graduate</span>
+                  </div>
+                  <div class="flex items-center">
+                    <span class="text-yellow-400 mr-2">🤖</span>
+                    <span class="text-gray-300 text-xs">AI-Enhanced Development</span>
+                  </div>
+                </div>
+
+                <!-- Bio Content - Compact -->
+                <div class="text-gray-300 leading-relaxed text-xs">
+                  <p>
+                    IT graduate passionate about AI-enhanced web development. Building smart applications that solve real-world problems with intelligent systems and modern tools.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Right Column - Social Links -->
+              <div>
+                <h4 class="text-white font-bold text-sm mb-4 text-center">Let's Connect</h4>
+                
+                <!-- Social Buttons - Compact -->
+                <div class="space-y-2">
+                  <!-- Gmail -->
+                  <button class="nes-btn is-success w-full text-xs py-1 flex items-center justify-center" onclick="window.open('mailto:danbanaybanay09@gmail.com', '_blank')">
+                    <i class="nes-icon gmail is-small mr-2" style="margin-right: 8px;"></i>
+                    Email
+                  </button>
+
+                  <!-- GitHub -->
+                  <button class="nes-btn is-dark w-full text-xs py-1 flex items-center justify-center" onclick="window.open('https://github.com/danskie09', '_blank')">
+                    <i class="nes-icon github is-small mr-2" style="margin-right: 8px;"></i>
+                    GitHub
+                  </button>
+
+                  <!-- LinkedIn -->
+                  <button class="nes-btn is-primary w-full text-xs py-1 flex items-center justify-center" onclick="window.open('https://www.linkedin.com/in/daniel-banaybanay-9a7285358/', '_blank')">
+                    <i class="nes-icon linkedin is-small mr-2" style="margin-right: 8px;"></i>
+                    LinkedIn
+                  </button>
+
+                  <!-- Back to Top -->
+                  <button class="nes-btn is-warning w-full text-xs py-1 flex items-center justify-center" onclick="document.querySelector('main').scrollIntoView({ behavior: 'smooth' })">
+                    <i class="nes-icon star is-small mr-2" style="margin-right: 8px;"></i>
+                    Back to Top
+                  </button>
+                </div>
+
+                <!-- Status Indicator - Compact -->
+                <div class="mt-4 text-center">
+                  <div class="nes-container is-rounded py-1">
+                    <p class="nes-text is-success text-xs mb-0">🟢 AVAILABLE</p>
+                    <p class="text-gray-300 text-xs">Open to opportunities</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <script src="index.js"></script>
 
     <!-- Mobile Menu Toggle Script -->
