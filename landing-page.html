@@ -697,14 +697,146 @@
             </div>
         </div>
       </div>
+    </section>
 
+    <!-- Contact Section -->
+    <section
+      id="contact"
+      class="min-h-screen py-20 px-4 sm:px-6 lg:px-8 relative z-10"
+    >
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="nes-text is-warning text-2xl sm:text-3xl mb-4">
+            LET'S CONNECT
+          </h2>
+          <p class="text-gray-300 max-w-2xl mx-auto mb-8">
+            Let's work together or chat about something cool! Fill out the form below and I'll get back to you soon.
+          </p>
+          
+          <!-- Status Indicator -->
+          <div class="inline-flex items-center space-x-2 bg-green-500/20 px-4 py-2 rounded-full border border-green-400/30 mb-8">
+            <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+            <span class="text-green-400 text-sm font-semibold">READY FOR NEW QUESTS</span>
+          </div>
+        </div>
 
-      
+        <!-- Contact Form with Glassmorphism -->
+        <div class="bg-black/40 backdrop-blur-md border border-white/20 rounded-lg p-6 relative overflow-hidden">
+          <div class="relative z-10">
+            <!-- Form Header -->
+            <div class="text-center mb-6">
+              <div class="w-12 h-12 bg-blue-500/20 backdrop-blur-md rounded-lg flex items-center justify-center border border-blue-400/30 mx-auto mb-3">
+                <span class="text-2xl">📧</span>
+              </div>
+              <h3 class="nes-text is-primary text-sm mb-2">SEND MESSAGE</h3>
+              <p class="text-gray-300 text-xs">Start a new conversation</p>
+            </div>
 
+            <!-- Contact Form -->
+            <form id="contactForm" class="space-y-4">
+              <!-- Name Field -->
+              <div class="nes-field">
+                <label for="name_field" class="nes-text is-primary text-sm mb-2 block">YOUR NAME</label>
+                <input 
+                  type="text" 
+                  id="name_field" 
+                  name="name"
+                  class="nes-input w-full bg-black/30 backdrop-blur-sm border-2 border-white/20 text-white placeholder-gray-400 focus:border-blue-400/60 transition-colors duration-300" 
+                  placeholder="Enter your name..."
+                  required
+                />
+              </div>
 
+              <!-- Email Field -->
+              <div class="nes-field">
+                <label for="email_field" class="nes-text is-primary text-sm mb-2 block">YOUR EMAIL</label>
+                <input 
+                  type="email" 
+                  id="email_field" 
+                  name="email"
+                  class="nes-input w-full bg-black/30 backdrop-blur-sm border-2 border-white/20 text-white placeholder-gray-400 focus:border-blue-400/60 transition-colors duration-300" 
+                  placeholder="your.email@example.com"
+                  required
+                />
+              </div>
 
+              <!-- Message Field -->
+              <div class="nes-field">
+                <label for="message_field" class="nes-text is-primary text-sm mb-2 block">YOUR MESSAGE</label>
+                <textarea 
+                  id="message_field" 
+                  name="message"
+                  class="nes-textarea w-full bg-black/30 backdrop-blur-sm border-2 border-white/20 text-white placeholder-gray-400 focus:border-blue-400/60 transition-colors duration-300 resize-none" 
+                  rows="4"
+                  placeholder="Tell me about your project, ideas, or just say hello!"
+                  required
+                ></textarea>
+              </div>
 
+              <!-- Submit Button -->
+              <div class="text-center">
+                <button 
+                  type="submit" 
+                  class="nes-btn is-primary text-xs px-6 py-2 transform transition-all duration-300 hover:scale-105"
+                >
+                  🚀 SEND MESSAGE
+                </button>
+              </div>
+            </form>
 
+            <!-- Alternative Contact Methods -->
+            <div class="mt-8 pt-6 border-t border-white/20">
+              <div class="text-center mb-4">
+                <h4 class="nes-text is-warning text-xs mb-3">OR CONNECT DIRECTLY</h4>
+              </div>
+              
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Facebook -->
+                <div class="text-center">
+                  <button 
+                    class="nes-btn is-primary w-full text-xs py-2 flex items-center justify-center group" 
+                    onclick="window.open('https://web.facebook.com/dansvcl', '_blank')"
+                  >
+                    <i class="nes-icon facebook is-small mr-2"></i>
+                    <span>Facebook</span>
+                  </button>
+                </div>
+
+                <!-- Instagram -->
+                <div class="text-center">
+                  <button 
+                    class="nes-btn is-error w-full text-xs py-2 flex items-center justify-center group" 
+                    onclick="window.open('https://www.instagram.com/dansvcl/', '_blank')"
+                  >
+                    <i class="nes-icon instagram is-small mr-2"></i>
+                    <span>Instagram</span>
+                  </button>
+                </div>
+
+                <!-- GitHub -->
+                <div class="text-center">
+                  <button 
+                    class="nes-btn is-dark w-full text-xs py-2 flex items-center justify-center group" 
+                    onclick="window.open('https://github.com/danskie09', '_blank')"
+                  >
+                    <i class="nes-icon github is-small mr-2"></i>
+                    <span>GitHub</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Fun Footer Message -->
+            <div class="mt-6 text-center">
+              <div class="nes-container is-rounded inline-block bg-purple-500/20 border-purple-400/30">
+                <p class="nes-text is-warning text-xs mb-1">🎮 ACHIEVEMENT UNLOCKED</p>
+                <p class="text-purple-400 text-xs">You found the contact form!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Mobile Menu Toggle Script -->
     <script>
@@ -728,6 +860,40 @@
           backgroundLayer.style.filter = "blur(1px)";
           backgroundLayer.style.opacity = "1";
         }
+      });
+
+      // Contact Form Handler
+      document.getElementById("contactForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const name = document.getElementById("name_field").value;
+        const email = document.getElementById("email_field").value;
+        const message = document.getElementById("message_field").value;
+        
+        // Create email content
+        const subject = `Portfolio Contact: Message from ${name}`;
+        const body = `Hi Daniel,
+
+${message}
+
+---
+From: ${name}
+Email: ${email}
+
+Sent from your portfolio contact form.`;
+        
+        // Create mailto link
+        const mailtoLink = `mailto:banaybanaydaniel09@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        // Open email client
+        window.location.href = mailtoLink;
+        
+        // Optional: Show success message (you can customize this)
+        alert("📧 Opening your email client! Thank you for reaching out!");
+        
+        // Reset form
+        this.reset();
       });
     </script>
   </body>
