@@ -49,9 +49,60 @@ nav button {
   font-family: 'Press Start 2P', monospace !important;
 }
 
+/* Pixelated border for profile image */
+.pixelated-border {
+  border: 4px solid;
+  border-image: 
+    linear-gradient(45deg, 
+      #ffbf00 0%, #ffbf00 25%, 
+      #00ff00 25%, #00ff00 50%, 
+      #ff6b6b 50%, #ff6b6b 75%, 
+      #4ecdc4 75%, #4ecdc4 100%) 1;
+  box-shadow: 
+    0 0 0 2px #000,
+    4px 4px 0 0 #333,
+    8px 8px 0 0 #666;
+  object-fit: cover;
+  border-radius: 0;
+  position: relative;
+}
+
+/* Additional pixelated effect with pseudo-elements */
+.pixelated-border::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 2px,
+      rgba(255, 191, 0, 0.3) 2px,
+      rgba(255, 191, 0, 0.3) 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 2px,
+      rgba(0, 255, 0, 0.3) 2px,
+      rgba(0, 255, 0, 0.3) 4px
+    );
+  z-index: -1;
+  pointer-events: none;
+}
+
 /* Smooth scrolling for anchor links */
 html {
   scroll-behavior: smooth;
+}
+
+/* Grid animation for hero section */
+@keyframes gridMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(40px, 40px); }
 }
 
 /* Override some NES.css for cleaner look */

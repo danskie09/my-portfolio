@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Daniel Banaybanay | Portfolio</title>
-    
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- minify -->
     <link
       href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css"
@@ -32,68 +32,139 @@
     <!-- css style -->
     <link rel="stylesheet" href="landing.css" />
   </head>
-  <body class="min-h-screen bg-gray-900">
+  <body class="min-h-screen bg-gray-900 relative">
+    <!-- Glassmorphism Background Layer -->
+    <div id="background-layer" class="fixed inset-0 z-0">
+      <!-- Main Background Image with Blur Effect -->
+      <div class="absolute inset-0">
+        <img
+          src="./images/8-bit-graphics-pixels-scene-with-island.jpg"
+          alt="Background"
+          class="w-full h-full object-cover blur-sm"
+          style="image-rendering: pixelated"
+        />
+        <!-- Glassmorphism overlay -->
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-gray-900/70 via-gray-900/60 to-gray-900/80 backdrop-blur-sm"
+        ></div>
+      </div>
+    </div>
+
     <!-- Retro-inspired Navbar -->
-    <nav class="bg-black/90 backdrop-blur-sm border-b-2 sticky top-0 z-50">
+    <nav
+      class="bg-black/90 backdrop-blur-sm border-b-2 sticky top-0 z-50 relative"
+    >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
           <!-- Logo/Brand - Pixelated Image -->
           <div class="flex items-center">
-            <img class="nes-avatar is-large" alt="DANSVGL Logo" src="./images/logo.png" style="image-rendering: pixelated; width: 130px; height: 120px;">
+            <img
+              class="nes-avatar is-large mt-2"
+              alt="DANSVGL Logo"
+              src="./images/logo.png"
+              style="width: 150px; height: 130px"
+            />
           </div>
-          
+
           <!-- Desktop Navigation -->
           <div class="hidden md:block">
             <div class="flex items-center space-x-6">
-              <a href="#home" class="text-white hover:text-yellow-400 text-sm font-medium transition-colors duration-200 hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]">
+              <a
+                href="#home"
+                class="text-white hover:text-yellow-400 text-sm font-medium transition-colors duration-200 hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]"
+              >
                 > HOME
               </a>
-              <a href="#projects" class="text-white hover:text-yellow-400 text-sm font-medium transition-colors duration-200 hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]">
+              <a
+                href="#projects"
+                class="text-white hover:text-yellow-400 text-sm font-medium transition-colors duration-200 hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]"
+              >
                 > PROJECTS
               </a>
-              <a href="#about" class="text-white hover:text-yellow-400 text-sm font-medium transition-colors duration-200 hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]">
+              <a
+                href="#about"
+                class="text-white hover:text-yellow-400 text-sm font-medium transition-colors duration-200 hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]"
+              >
                 > ABOUT
               </a>
-              <a href="#skills" class="text-white hover:text-yellow-400 text-sm font-medium transition-colors duration-200 hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]">
+              <a
+                href="#skills"
+                class="text-white hover:text-yellow-400 text-sm font-medium transition-colors duration-200 hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]"
+              >
                 > SKILLS
               </a>
-              <a href="#contact" class="text-white hover:text-yellow-400 text-sm font-medium transition-colors duration-200 hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]">
+              <a
+                href="#contact"
+                class="text-white hover:text-yellow-400 text-sm font-medium transition-colors duration-200 hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]"
+              >
                 > CONTACT
               </a>
               <!-- Retro CTA Button -->
-              <button class="nes-btn is-warning text-xs px-4 py-2 ml-4 transform transition-all duration-300 hover:scale-105">
+              <button
+                class="nes-btn is-warning text-xs px-4 py-2 ml-4 transform transition-all duration-300 hover:scale-105"
+              >
                 HIRE ME
               </button>
             </div>
           </div>
-          
+
           <!-- Mobile menu button -->
           <div class="md:hidden">
-            <button id="mobile-menu-button" class="text-yellow-400 hover:text-white focus:outline-none">
-              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            <button
+              id="mobile-menu-button"
+              class="text-yellow-400 hover:text-white focus:outline-none"
+            >
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
             </button>
           </div>
         </div>
       </div>
-      
+
       <!-- Mobile Navigation Menu -->
       <div id="mobile-menu" class="md:hidden hidden">
-        <div class="px-4 pt-2 pb-3 space-y-2 bg-black/95 border-t border-yellow-400">
-          <a href="#home" class="text-white hover:text-yellow-400 block py-2 text-sm font-medium transition-colors duration-200">
+        <div
+          class="px-4 pt-2 pb-3 space-y-2 bg-black/95 border-t border-yellow-400"
+        >
+          <a
+            href="#home"
+            class="text-white hover:text-yellow-400 block py-2 text-sm font-medium transition-colors duration-200"
+          >
             > HOME
           </a>
-          <a href="#projects" class="text-white hover:text-yellow-400 block py-2 text-sm font-medium transition-colors duration-200">
+          <a
+            href="#projects"
+            class="text-white hover:text-yellow-400 block py-2 text-sm font-medium transition-colors duration-200"
+          >
             > PROJECTS
           </a>
-          <a href="#about" class="text-white hover:text-yellow-400 block py-2 text-sm font-medium transition-colors duration-200">
+          <a
+            href="#about"
+            class="text-white hover:text-yellow-400 block py-2 text-sm font-medium transition-colors duration-200"
+          >
             > ABOUT
           </a>
-          <a href="#skills" class="text-white hover:text-yellow-400 block py-2 text-sm font-medium transition-colors duration-200">
+          <a
+            href="#skills"
+            class="text-white hover:text-yellow-400 block py-2 text-sm font-medium transition-colors duration-200"
+          >
             > SKILLS
           </a>
-          <a href="#contact" class="text-white hover:text-yellow-400 block py-2 text-sm font-medium transition-colors duration-200">
+          <a
+            href="#contact"
+            class="text-white hover:text-yellow-400 block py-2 text-sm font-medium transition-colors duration-200"
+          >
             > CONTACT
           </a>
           <div class="pt-2">
@@ -106,45 +177,284 @@
     </nav>
 
     <!-- Main Content Area -->
-    <main class="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+    <main
+      class="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 relative z-10"
+    >
       <div class="text-center max-w-6xl mx-auto">
-        <!-- Hero Section -->
-        <div class="nes-container with-title is-centered mb-8">
-          <p class="title">DANIEL A. BANAYBANAY</p>
-          <p class="text-sm sm:text-base mb-4">
-            > Front End Developer<br>
-            > Retro Design Enthusiast<br>
-            > System Status: Online
-          </p>
+        <!-- Hero Section - Horizontal Glassmorphism Design -->
+        <div class="w-full max-w-6xl mx-auto mb-12">
+          <!-- Glassmorphism Container - Horizontal Rectangle -->
+          <div
+            class="bg-black/30 backdrop-blur-md border border-white/20 rounded-lg p-8 relative overflow-hidden"
+          >
+            <!-- Subtle background pattern -->
+            <div class="absolute inset-0 opacity-5">
+              <div
+                class="w-full h-full"
+                style="
+                  background-image: repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 20px,
+                    rgba(255, 255, 255, 0.1) 20px,
+                    rgba(255, 255, 255, 0.1) 40px
+                  );
+                "
+              ></div>
+            </div>
+
+            <!-- Content Grid - Horizontal Layout -->
+            <div
+              class="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-8 items-center"
+            >
+              <!-- Left Section - Name & Level -->
+              <div class="text-center lg:text-left">
+                <h1 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+                  DANIEL A. BANAYBANAY
+                </h1>
+                <div
+                  class="inline-flex items-center space-x-2 bg-green-500/20 px-4 py-2 rounded-full border border-green-400/30"
+                >
+                  <span class="text-green-400 text-sm">⭐</span>
+                  <span class="text-white text-sm font-semibold"
+                    >Level 21 Developer</span
+                  >
+                </div>
+              </div>
+
+              <!-- Center Section - Stats -->
+              <div class="space-y-6">
+                <!-- Skills Row -->
+                <div class="flex justify-center space-x-6">
+                  <div class="text-center">
+                    <div
+                      class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mb-2 mx-auto border border-blue-400/30"
+                    >
+                      <span class="text-xl">🎮</span>
+                    </div>
+                    <div class="text-blue-400 text-xs font-semibold">
+                      DEVELOPER
+                    </div>
+                  </div>
+                  <div class="text-center">
+                    <div
+                      class="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center mb-2 mx-auto border border-purple-400/30"
+                    >
+                      <span class="text-xl">⚡</span>
+                    </div>
+                    <div class="text-purple-400 text-xs font-semibold">
+                      RETRO
+                    </div>
+                  </div>
+                  <div class="text-center">
+                    <div
+                      class="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center mb-2 mx-auto border border-red-400/30"
+                    >
+                      <span class="text-xl">🛡️</span>
+                    </div>
+                    <div class="text-red-400 text-xs font-semibold">PIXEL</div>
+                  </div>
+                </div>
+
+                <!-- XP Progress -->
+                <div>
+                  <div class="flex justify-between text-xs mb-2 text-gray-300">
+                    <span>Experience Points</span>
+                    <span class="text-green-400">2,847 / 3,000</span>
+                  </div>
+                  <div
+                    class="w-full h-2 bg-gray-700/50 rounded-full overflow-hidden"
+                  >
+                    <div
+                      class="h-full bg-gradient-to-r from-green-400 to-blue-500 rounded-full"
+                      style="width: 94.9%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Section - Status & Actions -->
+              <div class="text-center lg:text-right space-y-4">
+                <!-- Status -->
+                <div
+                  class="inline-flex items-center space-x-2 bg-green-500/20 px-4 py-2 rounded-full border border-green-400/30"
+                >
+                  <span
+                    class="w-2 h-2 bg-green-400 rounded-full animate-pulse"
+                  ></span>
+                  <span class="text-green-400 text-sm font-semibold"
+                    >READY FOR QUESTS</span
+                  >
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col space-y-3">
+                  <button class="nes-btn is-primary text-xs">
+                    🎯 VIEW PROJECTS
+                  </button>
+                  <button class="nes-btn is-success text-xs">
+                    📜 GET RESUME
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        
-        <!-- Quick Stats or Skills -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-          <div class="nes-container is-rounded">
-            <p class="text-xs sm:text-sm">LANGUAGES</p>
-            <p class="text-xs mt-2">JavaScript • HTML • CSS</p>
-          </div>
-          <div class="nes-container is-rounded">
-            <p class="text-xs sm:text-sm">FRAMEWORKS</p>
-            <p class="text-xs mt-2">React • Node.js • Tailwind</p>
-          </div>
-          <div class="nes-container is-rounded">
-            <p class="text-xs sm:text-sm">STATUS</p>
-            <p class="text-xs mt-2">Available for missions</p>
+
+        <!-- Enhanced Bio Section -->
+        <div class="mt-16 max-w-4xl mx-auto">
+          <div class="nes-container is-dark relative overflow-hidden">
+            <!-- Background Image for Mission Statement -->
+            <div class="absolute inset-0 opacity-60">
+              <img
+                src="./images/background.webp"
+                alt=""
+                class="w-full h-full object-cover"
+                style="image-rendering: pixelated"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60"
+              ></div>
+            </div>
+
+            <!-- Content -->
+            <div class="relative z-10">
+              <div class="text-center mb-6">
+                <h3 class="nes-text is-warning text-lg mb-4">
+                  MISSION STATEMENT
+                </h3>
+              </div>
+              <p class="text-base leading-relaxed text-center">
+                "To build innovative, intelligent solutions that harness the
+                power of Artificial Intelligence to solve real-world problems. I
+                am driven by a passion for continuous learning, ethical
+                development, and creating impactful technologies that enhance
+                user experiences and streamline processes through smart
+                automation and data-driven insights"
+              </p>
+
+              <!-- Status Indicator -->
+              <div class="mt-8 text-center">
+                <div class="nes-container is-rounded inline-block">
+                  <p class="nes-text is-success mb-2">🟢 SYSTEM STATUS</p>
+                  <p class="text-sm">Available for new missions</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </main>
 
+    <!-- Projects Section -->
+    <section
+      id="projects"
+      class="min-h-screen py-20 px-4 sm:px-6 lg:px-8 relative z-10"
+    >
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="nes-text is-warning text-2xl sm:text-3xl mb-4">
+            FEATURED PROJECTS
+          </h2>
+          <p class="text-gray-300 max-w-2xl mx-auto">
+            Showcasing my latest work in retro-inspired web development and
+            modern application design.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1 -->
+          <div class="nes-container with-title">
+            <p class="title">PIXEL PORTFOLIO</p>
+            <div class="mb-4">
+              <div
+                class="w-full h-32 bg-gray-800 rounded mb-3 flex items-center justify-center"
+              >
+                <span class="text-gray-500">🎮 PROJECT IMAGE</span>
+              </div>
+              <p class="text-xs mb-3">
+                A retro-styled portfolio website built with modern web
+                technologies.
+              </p>
+              <div class="flex flex-wrap gap-1 mb-3">
+                <span class="nes-badge is-success text-xs">React</span>
+                <span class="nes-badge is-warning text-xs">CSS3</span>
+                <span class="nes-badge is-primary text-xs">JavaScript</span>
+              </div>
+              <button class="nes-btn is-small is-primary">VIEW PROJECT</button>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="nes-container with-title">
+            <p class="title">GAME TRACKER</p>
+            <div class="mb-4">
+              <div
+                class="w-full h-32 bg-gray-800 rounded mb-3 flex items-center justify-center"
+              >
+                <span class="text-gray-500">🕹️ PROJECT IMAGE</span>
+              </div>
+              <p class="text-xs mb-3">
+                A gaming library management app with retro UI design.
+              </p>
+              <div class="flex flex-wrap gap-1 mb-3">
+                <span class="nes-badge is-success text-xs">Vue.js</span>
+                <span class="nes-badge is-warning text-xs">Node.js</span>
+                <span class="nes-badge is-error text-xs">MongoDB</span>
+              </div>
+              <button class="nes-btn is-small is-primary">VIEW PROJECT</button>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="nes-container with-title">
+            <p class="title">PIXEL EDITOR</p>
+            <div class="mb-4">
+              <div
+                class="w-full h-32 bg-gray-800 rounded mb-3 flex items-center justify-center"
+              >
+                <span class="text-gray-500">🎨 PROJECT IMAGE</span>
+              </div>
+              <p class="text-xs mb-3">
+                An online pixel art editor with collaborative features.
+              </p>
+              <div class="flex flex-wrap gap-1 mb-3">
+                <span class="nes-badge is-success text-xs">TypeScript</span>
+                <span class="nes-badge is-warning text-xs">Canvas API</span>
+                <span class="nes-badge is-primary text-xs">Socket.io</span>
+              </div>
+              <button class="nes-btn is-small is-primary">VIEW PROJECT</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <script src="index.js"></script>
-    
+
     <!-- Mobile Menu Toggle Script -->
     <script>
-      document.getElementById('mobile-menu-button').addEventListener('click', function() {
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenu.classList.toggle('hidden');
+      document
+        .getElementById("mobile-menu-button")
+        .addEventListener("click", function () {
+          const mobileMenu = document.getElementById("mobile-menu");
+          mobileMenu.classList.toggle("hidden");
+        });
+
+      // Simple glassmorphism enhancement on scroll
+      window.addEventListener("scroll", function () {
+        const scrollY = window.scrollY;
+        const backgroundLayer = document.getElementById("background-layer");
+
+        // Add more blur and opacity as user scrolls for better readability
+        if (scrollY > 100) {
+          backgroundLayer.style.filter = "blur(3px)";
+          backgroundLayer.style.opacity = "0.8";
+        } else {
+          backgroundLayer.style.filter = "blur(1px)";
+          backgroundLayer.style.opacity = "1";
+        }
       });
     </script>
-  
   </body>
 </html>
